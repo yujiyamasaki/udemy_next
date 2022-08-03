@@ -5,6 +5,7 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import Layout from "../components/Layout";
 import { getPostsData } from "../lib/post";
+import { siteTitle } from "../components/Layout";
 
 //ssgの場合
 //外部から一度だけデータを取ってくるときに使うのがgetStaticProps
@@ -30,7 +31,10 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData }) {
   return (
-    <Layout>
+    <Layout home>
+      <Head>
+        <title>{siteTitle}</title>
+      </Head>
       <section>
         <p className={utilStyles.headingMd}>プロフィールが入ります</p>
       </section>
